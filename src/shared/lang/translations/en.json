@@ -12,6 +12,7 @@
       "heliophysics": "NASA Heliophysics",
       "biological": "NASA Boilogical & Physical Sciences"
     },
-    "picture_of_the_day": "Picture of the day"
+    "picture_of_the_day": "Picture of the day",
+    "copyright": "Image Author: {{author}}"
   }
 }

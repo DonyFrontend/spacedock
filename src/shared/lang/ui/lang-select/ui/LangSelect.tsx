@@ -36,7 +36,7 @@ const LangSelect = () => {
   ];
 
   return (
-    <div className="p-3 border-white bg-black border rounded-[500px] flex gap-x-2 px-4 py-2 items-center">
+    <div className=" border-white bg-black border rounded-[500px] flex gap-x-2 px-4 py-2 items-center">
       <img src={lang_icon} alt="Language icon" />
       <select
         className="text-lg cursor-pointer outline-none"
@@ -44,7 +44,11 @@ const LangSelect = () => {
         onChange={handleChange}
       >
         {orderedLangs.map((item) => (
-          <option className="bg-black text-white" key={item.code} value={item.code}>
+          <option
+            className="bg-black text-white"
+            key={item.code}
+            value={item.code}
+          >
             {item.label}
           </option>
         ))}

@@ -12,6 +12,7 @@
       "heliophysics": "Гелиофизика NASA",
       "biological": "Биологические и физические науки NASA"
     },
-    "picture_of_the_day": "Картинка дня"
+    "picture_of_the_day": "Картинка дня",
+    "copyright": "Автор изображения: {{author}}"
   }
 }
