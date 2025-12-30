@@ -44,7 +44,7 @@ const LangSelect = () => {
         onChange={handleChange}
       >
         {orderedLangs.map((item) => (
-          <option key={item.code} value={item.code}>
+          <option className="bg-black text-white" key={item.code} value={item.code}>
             {item.label}
           </option>
         ))}

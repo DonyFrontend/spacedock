@@ -35,7 +35,7 @@ const Welcome = () => {
               />
             </h2>
           </motion.div>
-          <div className="fixed top-2.5 left-2.5">
+          <div className="fixed top-4 left-4">
             <LangSelect />
           </div>
           <motion.div
