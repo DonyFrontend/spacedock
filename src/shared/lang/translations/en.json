@@ -1,0 +1,17 @@
+{
+  "landing": {
+    "title": "Humanity has always looked to the sky, trying to understand what lies beyond the points of light.",
+    "under_title": "Explore it together with <b>SpaceDock</b>",
+    "button": "Start Exploring"
+  },
+  "main": {
+    "discover": "Explore the Space",
+    "explore_cards": {
+      "planets": "Planetary Science at NASA",
+      "lunary": "Lunary Discovery And Expolation",
+      "heliophysics": "NASA Heliophysics",
+      "biological": "NASA Boilogical & Physical Sciences"
+    },
+    "picture_of_the_day": "Picture of the day"
+  }
+}
