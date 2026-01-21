@@ -44,7 +44,7 @@ const Welcome = () => {
             transition={{ duration: 4 }}
           >
             <Link
-              to="/biblary"
+              to="/library"
               className="border-2 text-[18px] cursor-pointer font-semibold shadow-main  border-main p-3 py-4 hover:bg-main duration-200 rounded-[15px]"
             >
               {t("landing.button")}
