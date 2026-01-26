@@ -1,3 +1,4 @@
+import { Navigation } from "@/widgets/navigation";
 import { useTranslation } from "react-i18next";
 
 const PlanetaryScience = () => {
@@ -5,7 +6,7 @@ const PlanetaryScience = () => {
 
   return (
     <div className="flex flex-col gap-y-20 w-full">
-      <h1 className="text-3xl text-center">Planetary Science</h1>
+      <Navigation data={[{ text: "text", to: "/text" }]} />
     </div>
   );
 };
