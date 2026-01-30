@@ -10,7 +10,7 @@ const Layout = () => {
         <div className="absolute top-0 left-0 -z-10 w-full h-full">
           <ReactParticles />
         </div>
-        <div className="text-white max-w-350 m-auto flex flex-col items-center">
+        <div className="text-white m-auto flex flex-col items-center">
           <Outlet />
         </div>
       </div>

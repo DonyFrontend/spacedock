@@ -8,29 +8,31 @@ const Main = () => {
 
   return (
     <div className="flex flex-col gap-y-60 w-full">
-      <div className="flex flex-col gap-y-10 w-full">
-        <h1 className="text-3xl text-center">{t("main.discover")}</h1>
-        <ExploreCards />
-      </div>
-      <APOD />
-      <div className="w-full flex gap-10 items-center">
-        <div className="w-1/2 flex flex-col gap-y-7">
-          <h1 className="text-4xl">{t("main.what_is_nasa")}</h1>
-          <p style={{ whiteSpace: "pre-wrap" }}>
-            {t("main.what_is_nasa_text")}
-          </p>
+      <div className="max-w-350 m-auto flex flex-col gap-y-60">
+        <div className="flex flex-col gap-y-10 w-full">
+          <h1 className="text-3xl text-center">{t("main.discover")}</h1>
+          <ExploreCards />
         </div>
+        <APOD />
+        <div className="w-full flex gap-10 items-center">
+          <div className="w-1/2 flex flex-col gap-y-7">
+            <h1 className="text-4xl">{t("main.what_is_nasa")}</h1>
+            <p style={{ whiteSpace: "pre-wrap" }}>
+              {t("main.what_is_nasa_text")}
+            </p>
+          </div>
 
-        <div className="w-1/2 aspect-video">
-          <iframe
-            className="w-full h-full rounded-lg"
-            src="https://www.youtube.com/embed/Kk1vR7BdTno"
-            title="Cosmic Dawn (Official NASA Trailer)"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          />
+          <div className="w-1/2 aspect-video">
+            <iframe
+              className="w-full h-full rounded-lg"
+              src="https://www.youtube.com/embed/Kk1vR7BdTno"
+              title="Cosmic Dawn (Official NASA Trailer)"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
+          </div>
         </div>
       </div>
       <div
@@ -61,7 +63,7 @@ const Main = () => {
             />
           </div>
           <a
-            className="text-[1.4rem] font-semibold inline cursor-pointer hover:underline"
+            className="text-[1.4rem] font-semibold inline w-fit cursor-pointer hover:underline"
             href="https://lp.constantcontactpages.com/sl/7ThAX6O/signup"
           >
             {t("main.explore_banner.sign_up")}
