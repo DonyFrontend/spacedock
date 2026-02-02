@@ -1,7 +1,7 @@
 import type React from "react";
 import { lazy } from "react";
 
-const Welcome = lazy(() => import("@/pages/welcome-page"));
+const Welcome = lazy(() => import("@/pages/welcome-page/ui/Welcome"));
 const Main = lazy(() => import("@/pages/main"));
 const PlanetaryScience = lazy(() => import("@/pages/planetary-science"));
 const LunaryDiscovery = lazy(() => import("@/pages/lunary-discovery"));

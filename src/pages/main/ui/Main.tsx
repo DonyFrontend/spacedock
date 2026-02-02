@@ -1,38 +1,78 @@
-import { ReactParticles } from "@/widgets/particles";
 import React from "react";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import ExploreCards from "../model/utils/ExploreCards";
-import { useImageOfTheDayStore } from "@/app/providers/store/image-of-the-day/image-of-the-day-store";
-import { useFetch } from "@/shared/api/useFetch";
-import { LoadingScreen } from "@/shared/ui/loading-screen";
+import APOD from "../model/utils/APOD";
+import { ReactParticles } from "@/widgets/particles";
 
 const Main = () => {
   const { t } = useTranslation();
-  const { imageOfTheDay, setImageOfTheDay } = useImageOfTheDayStore();
-  const { loading } = useFetch({ fetch: setImageOfTheDay });
-
-  if (loading) {
-    return <LoadingScreen message="Loading astronomy picture of the day..." />;
-  }
-  console.log(imageOfTheDay);
 
   return (
-    <div>
+    <div className="flex flex-col gap-y-60 w-full">
       <div className="absolute top-0 left-0 -z-10 w-full h-full">
         <ReactParticles />
       </div>
-      <div className="text-white max-w-350 m-auto pt-20 flex flex-col items-center">
-        <div className="flex flex-col gap-y-20 w-full">
-          <div className="flex flex-col gap-y-10 w-full">
-            <h1 className="text-3xl text-center">{t("main.discover")}</h1>
-            <ExploreCards />
+      <div className="max-w-350 m-auto flex flex-col gap-y-60">
+        <div className="flex flex-col gap-y-10 w-full">
+          <h1 className="text-3xl text-center">{t("main.discover")}</h1>
+          <ExploreCards />
+        </div>
+        <APOD />
+        <div className="w-full flex gap-10 items-center">
+          <div className="w-1/2 flex flex-col gap-y-7">
+            <h1 className="text-4xl">{t("main.what_is_nasa")}</h1>
+            <p style={{ whiteSpace: "pre-wrap" }}>
+              {t("main.what_is_nasa_text")}
+            </p>
           </div>
-          <div>
-            <h1 className="text-4xl text-center">
-              {t("main.picture_of_the_day")}
-            </h1>
+
+          <div className="w-1/2 aspect-video">
+            <iframe
+              className="w-full h-full rounded-lg"
+              src="https://www.youtube.com/embed/Kk1vR7BdTno"
+              title="Cosmic Dawn (Official NASA Trailer)"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
           </div>
         </div>
+      </div>
+      <div
+        style={{
+          backgroundImage:
+            "url(https://res.cloudinary.com/dthqqetyt/image/upload/v1769313612/webb-tarantula-neb_qzcmwf.png)",
+        }}
+        className="flex flex-start bg-center bg-cover p-16"
+      >
+        <article className="w-1/3 flex flex-col gap-y-8">
+          <h2 className="text-[2.4rem] font-bold">
+            {t("main.explore_banner.title")}
+          </h2>
+          <div className="flex flex-col gap-y-3">
+            <p>{t("main.explore_banner.subtitle")}</p>
+            <Trans
+              i18nKey={"main.explore_banner.privacy"}
+              components={{
+                a: (
+                  <a
+                    href="https://www.nasa.gov/privacy/"
+                    target="_blank"
+                    className="underline cursor-pointer"
+                  ></a>
+                ),
+                p: <p></p>,
+              }}
+            />
+          </div>
+          <a
+            className="text-[1.4rem] font-semibold inline w-fit cursor-pointer hover:underline"
+            href="https://lp.constantcontactpages.com/sl/7ThAX6O/signup"
+          >
+            {t("main.explore_banner.sign_up")}
+          </a>
+        </article>
       </div>
     </div>
   );

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import lang_icon from "@/shared/assets/icons/language.svg";
 import type { LangType } from "@/shared/lang/data/lang";
+import "../../../i18n/i18n";
 
 const LANG_KEY = "current_lang";
 const LANGS: LangType[] = [

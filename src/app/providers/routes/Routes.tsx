@@ -6,7 +6,7 @@ import { Route, Routes } from "react-router-dom";
 
 const RoutesComponent = () => {
   return (
-    <>
+    <div className="text-white">
       <Header />
       <Suspense fallback={<LoadingScreen message="Loading page..." />}>
         <Routes>
@@ -15,7 +15,7 @@ const RoutesComponent = () => {
           ))}
         </Routes>
       </Suspense>
-    </>
+    </div>
   );
 };
 

@@ -1,3 +1,4 @@
+import { LangSelect } from "@/shared/lang/ui/lang-select";
 import { NavLink } from "react-router-dom";
 
 const navLinks = [
@@ -47,6 +48,7 @@ const Header = () => {
           </NavLink>
         ))}
       </nav>
+        <LangSelect />
     </header>
   );
 };
