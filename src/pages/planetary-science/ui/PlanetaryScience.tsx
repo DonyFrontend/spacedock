@@ -7,6 +7,7 @@ import { NewsSection } from "@/shared/ui/news";
 import { LazyImage } from "@/shared/ui/lazy-image";
 import { formatDate } from "@/shared/utils/date";
 import { ReactParticles } from "@/widgets/particles";
+import { LoadingScreen } from "@/shared/ui/loading-screen";
 
 const PlanetaryScience = () => {
   const [media, setMedia] = useState<NasaImageItem[]>([]);
@@ -158,7 +159,7 @@ const PlanetaryScience = () => {
             Media
           </h2>
           {mediaLoading && (
-            <p className="text-white/80">Loading NASA imagery...</p>
+            <LoadingScreen variant="section" message="Loading NASA imagery..." />
           )}
           {mediaError && !mediaLoading && (
             <p className="text-red-200">{mediaError}</p>

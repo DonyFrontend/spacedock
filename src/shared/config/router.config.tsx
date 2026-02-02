@@ -1,11 +1,12 @@
-import { Welcome } from "@/pages/welcome-page";
-import Main from "@/pages/main";
-import PlanetaryScience from "@/pages/planetary-science";
-import LunaryDiscovery from "@/pages/lunary-discovery";
-import Heliophysics from "@/pages/heliophysics";
-import BiologicalPhysical from "@/pages/biological-physical";
 import type React from "react";
-// import { lazy } from "react";
+import { lazy } from "react";
+
+const Welcome = lazy(() => import("@/pages/welcome-page"));
+const Main = lazy(() => import("@/pages/main"));
+const PlanetaryScience = lazy(() => import("@/pages/planetary-science"));
+const LunaryDiscovery = lazy(() => import("@/pages/lunary-discovery"));
+const Heliophysics = lazy(() => import("@/pages/heliophysics"));
+const BiologicalPhysical = lazy(() => import("@/pages/biological-physical"));
 
 export enum RouterEnum {
   MAIN = "/biblary",

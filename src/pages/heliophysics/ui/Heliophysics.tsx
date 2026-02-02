@@ -6,6 +6,7 @@ import type { DonkiEvent, DonkiEventType, NewsItem } from "@/shared/types/nasa";
 import { formatDateTime, formatISODateInput } from "@/shared/utils/date";
 import { NewsSection } from "@/shared/ui/news";
 import { ReactParticles } from "@/widgets/particles";
+import { LoadingScreen } from "@/shared/ui/loading-screen";
 
 const DEFAULT_RANGE_DAYS = 30;
 
@@ -220,7 +221,10 @@ const Heliophysics = () => {
           </form>
 
           {eventsLoading && (
-            <p className="text-white/80">Loading space weather events...</p>
+            <LoadingScreen
+              variant="section"
+              message="Loading space weather events..."
+            />
           )}
           {eventsError && !eventsLoading && (
             <p className="text-red-200">{eventsError}</p>

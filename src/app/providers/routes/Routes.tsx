@@ -1,18 +1,20 @@
 import { RoutesObject } from "@/shared/config/router.config";
 import Header from "@/widgets/headers/ui/Header";
-// import { Footer } from "@/widgets/footer";
-// import { Header } from "@/widgets/header";
+import { LoadingScreen } from "@/shared/ui/loading-screen";
+import { Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 
 const RoutesComponent = () => {
   return (
     <>
       <Header />
-      <Routes>
-        {Object.values(RoutesObject).map((route, index) => (
-          <Route path={route.path} element={route.element} key={index} />
-        ))}
-      </Routes>
+      <Suspense fallback={<LoadingScreen message="Loading page..." />}>
+        <Routes>
+          {Object.values(RoutesObject).map((route, index) => (
+            <Route path={route.path} element={route.element} key={index} />
+          ))}
+        </Routes>
+      </Suspense>
     </>
   );
 };
