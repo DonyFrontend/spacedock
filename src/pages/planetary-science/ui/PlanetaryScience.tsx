@@ -6,6 +6,7 @@ import type { NasaImageItem, NewsItem } from "@/shared/types/nasa";
 import { NewsSection } from "@/shared/ui/news";
 import { LazyImage } from "@/shared/ui/lazy-image";
 import { formatDate } from "@/shared/utils/date";
+import { ReactParticles } from "@/widgets/particles";
 
 const PlanetaryScience = () => {
   const [media, setMedia] = useState<NasaImageItem[]>([]);
@@ -60,7 +61,10 @@ const PlanetaryScience = () => {
   }, []);
 
   return (
-    <main className="text-white px-4 pb-16">
+    <main className="text-white px-4 pb-16 relative">
+      <div className="absolute top-0 left-0 -z-10 w-full h-full">
+        <ReactParticles />
+      </div>
       <div className="max-w-6xl mx-auto pt-16 flex flex-col gap-12">
         <header className="flex flex-col gap-4">
           <h1 className="text-4xl font-semibold">Planetary Science at NASA</h1>
