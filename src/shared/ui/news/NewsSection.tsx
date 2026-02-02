@@ -1,5 +1,6 @@
 import type { NewsItem } from "@/shared/types/nasa";
 import { formatDate } from "@/shared/utils/date";
+import { LoadingScreen } from "@/shared/ui/loading-screen";
 
 type NewsSectionProps = {
   title: string;
@@ -19,7 +20,9 @@ const NewsSection = ({ title, items, loading, error }: NewsSectionProps) => {
           Freshest NASA updates, sorted by newest first.
         </p>
       </div>
-      {loading && <p className="text-white/80">Loading latest news...</p>}
+      {loading && (
+        <LoadingScreen variant="section" message="Loading latest news..." />
+      )}
       {error && !loading && (
         <p className="text-red-200">
           {error}. Showing fallback stories instead.

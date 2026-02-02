@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import ExploreCards from "../model/utils/ExploreCards";
 import { useImageOfTheDayStore } from "@/app/providers/store/image-of-the-day/image-of-the-day-store";
 import { useFetch } from "@/shared/api/useFetch";
+import { LoadingScreen } from "@/shared/ui/loading-screen";
 
 const Main = () => {
   const { t } = useTranslation();
@@ -11,7 +12,7 @@ const Main = () => {
   const { loading } = useFetch({ fetch: setImageOfTheDay });
 
   if (loading) {
-    return <h1>Loading...</h1>;
+    return <LoadingScreen message="Loading astronomy picture of the day..." />;
   }
   console.log(imageOfTheDay);
 
