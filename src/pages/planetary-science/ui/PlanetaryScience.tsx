@@ -9,7 +9,7 @@ import { formatDate } from "@/shared/utils/date";
 
 const PlanetaryScience = () => {
   const [media, setMedia] = useState<NasaImageItem[]>([]);
-  const [mediaLoading, setMediaLoading] = useState(true);
+  const [mediaLoading, setMediaLoading] = useState<boolean>(true);
   const [mediaError, setMediaError] = useState<string | null>(null);
   const [news, setNews] = useState<NewsItem[]>([]);
   const [newsLoading, setNewsLoading] = useState(true);
@@ -17,7 +17,7 @@ const PlanetaryScience = () => {
 
   useEffect(() => {
     let active = true;
-    setMediaLoading(true);
+    // setMediaLoading(true);
     fetchNasaImages("planetary science solar system", 12)
       .then((items) => {
         if (active) {
@@ -35,7 +35,7 @@ const PlanetaryScience = () => {
         }
       });
 
-    setNewsLoading(true);
+    // setNewsLoading(true);
     fetchNews("planetary", fallbackPlanetaryNews)
       .then((items) => {
         if (active) {
@@ -160,9 +160,7 @@ const PlanetaryScience = () => {
             <p className="text-red-200">{mediaError}</p>
           )}
           {!mediaLoading && media.length === 0 && (
-            <p className="text-white/80">
-              No imagery available right now.
-            </p>
+            <p className="text-white/80">No imagery available right now.</p>
           )}
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {media.map((item) => (
@@ -181,9 +179,7 @@ const PlanetaryScience = () => {
                     {formatDate(item.dateCreated)}
                   </p>
                   {item.description && (
-                    <p className="text-sm text-white/70">
-                      {item.description}
-                    </p>
+                    <p className="text-sm text-white/70">{item.description}</p>
                   )}
                 </div>
               </article>
